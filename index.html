@@ -250,7 +250,7 @@
       font-size: clamp(14px, 0.95vw, 16px);
       line-height: 1.58;
       font-weight: 400;
-      text-align: justify;
+      text-align: left;
     }
 
     .hero-text {
@@ -285,22 +285,54 @@
       transform: translate(-3%, -2%);
     }
 
-    .quote {
-      position: absolute;
-      top: 5%;
-      right: 5%;
-      max-width: 300px;
-      padding: 22px 20px;
-      color: rgba(91, 61, 37, .82);
-      text-align: center;
+    .about-photo {
+      min-height: calc(100vh - 104px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-photo .hero-photo {
+      min-height: 620px;
+      width: 100%;
+      max-width: 680px;
+      border-top-left-radius: 38% 100%;
+      box-shadow: inset 1px 0 0 rgba(201, 130, 33, .42);
+    }
+
+    .about-photo .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 32%;
+      transform: none;
+    }
+
+    .about-photo .quote {
+      max-width: 420px;
+      margin: 32px auto 0;
+      padding: 22px 18px;
+      color: rgba(67, 44, 24, .95);
+      text-align: left;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(17px, 1.35vw, 22px);
+      font-size: clamp(14px, 1vw, 18px);
       font-style: italic;
-      line-height: 1.55;
-      background: rgba(255, 250, 243, .56);
-      border: 1px solid rgba(201, 130, 33, .2);
-      border-radius: 8px;
-      backdrop-filter: blur(4px);
+      line-height: 1.6;
+      background: rgba(255, 250, 243, .92);
+      border: 1px solid rgba(201, 130, 33, .28);
+      border-radius: 18px;
+      box-shadow: 0 24px 50px rgba(78, 52, 30, .12);
+      backdrop-filter: blur(5px);
+    }
+
+    .about-photo .quote::before {
+      content: '“';
+      display: block;
+      font-size: 3.2rem;
+      line-height: 0.8;
+      margin-bottom: -8px;
+      color: rgba(201, 130, 33, .8);
+      font-family: Georgia, "Times New Roman", serif;
     }
 
     .section-band {
@@ -342,6 +374,23 @@
       min-width: 0;
     }
 
+    .about-photo {
+      margin-top: 26px;
+      text-align: center;
+    }
+
+    .about-photo img {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 24px 60px rgba(78, 52, 30, .12);
+      border: 1px solid rgba(201, 130, 33, .18);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     .intro-layout h2 { font-size: clamp(38px, 3.8vw, 58px); }
     .intro-layout .cards { margin-top: 0; }
     .intro-layout .card { min-height: 244px; }
@@ -375,7 +424,7 @@
 
     .text p {
       margin: 0;
-      text-align: justify;
+      text-align: left;
     }
 
     .cards {
@@ -560,6 +609,86 @@
       line-height: 1.5;
     }
 
+
+
+    /* Ajustes específicos da tela Sobre */
+    #sobre.intro-band {
+      padding-top: clamp(62px, 7vw, 108px);
+      padding-bottom: clamp(62px, 7vw, 108px);
+    }
+
+    #sobre .intro-layout {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      grid-template-columns: minmax(0, 1fr) minmax(360px, .92fr);
+      gap: clamp(46px, 6vw, 86px);
+      align-items: center;
+    }
+
+    #sobre .eyebrow {
+      margin-bottom: clamp(18px, 2.2vh, 28px);
+    }
+
+    #sobre h2 {
+      font-size: clamp(42px, 4.7vw, 76px);
+      line-height: .94;
+    }
+
+    #sobre .text {
+      max-width: 650px;
+      font-size: clamp(14px, 0.95vw, 16px);
+      line-height: 1.58;
+      gap: 14px;
+      color: var(--muted);
+    }
+
+    #sobre .about-photo {
+      width: 100%;
+      min-height: auto;
+      margin-top: 0;
+      display: grid;
+      justify-items: center;
+      align-content: center;
+      gap: 24px;
+      text-align: center;
+    }
+
+    #sobre .about-photo .hero-photo {
+      width: min(100%, 520px);
+      max-width: 520px;
+      min-height: 560px;
+      height: 560px;
+      border-top-left-radius: 38% 100%;
+      border-bottom-left-radius: 18px;
+      border-top-right-radius: 18px;
+      border-bottom-right-radius: 18px;
+      overflow: hidden;
+      box-shadow: inset 1px 0 0 rgba(201, 130, 33, .42), 0 24px 60px rgba(78, 52, 30, .12);
+    }
+
+    #sobre .about-photo .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 32%;
+      transform: none;
+    }
+
+    #sobre .about-photo .quote {
+      width: min(100%, 620px);
+      max-width: 620px;
+      margin: 0 auto;
+      padding: 22px 26px;
+      text-align: center;
+      font-size: clamp(12px, 1.05vw, 16px);
+      line-height: 1.5;
+    }
+
+    #sobre .about-photo .quote::before {
+      font-size: 2.6rem;
+      margin-bottom: -6px;
+    }
+
     @media (max-width: 1280px) {
       .intro-layout {
         grid-template-columns: minmax(260px, .55fr) minmax(560px, 1fr);
@@ -610,6 +739,18 @@
         min-height: 58vh;
         border-top-left-radius: 34px;
       }
+
+      #sobre .intro-layout {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      #sobre .about-photo .hero-photo {
+        width: min(100%, 520px);
+        height: auto;
+        min-height: 520px;
+      }
     }
 
     @media (max-width: 760px) {
@@ -652,6 +793,16 @@
       .hero-photo { min-height: 520px; }
       .quote { display: none; }
 
+      #sobre .about-photo .quote {
+        display: block;
+        font-size: 18px;
+        padding: 20px 18px;
+      }
+
+      #sobre .about-photo .hero-photo {
+        min-height: 500px;
+      }
+
       .section-band,
       .intro-band {
         padding: 64px 18px;
@@ -689,8 +840,10 @@
         <div class="divider"></div>
 
         <div class="hero-text">
-          <p>Um espaço de escuta, acolhimento e reflexão para todos que desejam compreender suas dores, fortalecer limites emocionais e construir relações mais conscientes consigo e com o outro.</p>
-          <p>A psicanálise oferece um lugar seguro para falar sobre conflitos familiares, relações desgastantes, ansiedade, culpa, insegurança, baixa autoestima, medo de desagradar e padrões emocionais que se repetem nos vínculos.</p>
+          <p>Um espaço ético de escuta, acolhimento e reflexão para quem deseja compreender suas dores, seus conflitos e a forma como se relaciona consigo, com sua história e com o outro.</p>
+          <p>Na psicanálise, a fala abre caminho para que angústias, repetições, medos, culpa, inseguranças e dificuldades nos vínculos possam ser escutados, elaborados e compreendidos com respeito à singularidade de cada pessoa.</p>
+          <p>O processo analítico não oferece respostas prontas, conselhos rápidos ou fórmulas universais. Ele convida o sujeito a se aproximar da própria história, reconhecer padrões que se repetem e construir novas formas de se posicionar diante da vida, das escolhas e das relações.</p>
+          <p>Cuidar de si é também poder dar nome ao que machuca, compreender o que se repete e encontrar, no próprio tempo, caminhos mais conscientes de existência.</p>
         </div>
 
         <div class="actions">
@@ -711,48 +864,18 @@
           <h2 id="titulo-sobre">Sobre <span>mim.</span></h2>
           <div class="divider"></div>
           <div class="text">
-            <p>Sou Fabiane Cesconeto, psicanalista, e realizo atendimento online para todos que buscam compreender melhor suas dores, sua história e os padrões emocionais que se repetem nos vínculos.</p>
-            <p>Meu trabalho nasce de uma escuta cuidadosa, ética e sem julgamentos, respeitando o tempo, a singularidade e a trajetória de cada pessoa.</p>
+            <p>Sou Fabiane Cesconeto, psicanalista e hipnoterapeuta, e realizo atendimento online para pessoas que desejam compreender melhor suas dores, sua história e os padrões que se repetem em seus vínculos.</p>
+            <p>Minha prática se sustenta em uma escuta ética, cuidadosa e sem julgamentos, respeitando o tempo, a singularidade e a trajetória de cada sujeito.</p>
+            <p>Acredito que cada pessoa carrega uma história única, marcada por experiências, afetos, conflitos e formas próprias de se relacionar com o mundo. Por isso, o trabalho clínico não busca encaixar o sujeito em respostas prontas, mas oferecer um espaço seguro para que ele possa se escutar, elaborar suas questões e construir novas possibilidades diante da vida.</p>
+            <p>Meu compromisso é acolher cada processo com responsabilidade, sensibilidade e respeito, favorecendo um percurso de autoconhecimento, elaboração emocional e fortalecimento subjetivo.</p>
           </div>
         </div>
 
-        <div class="cards">
-          <article class="card">
-            <span class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 48 48">
-                <path d="M15 34c-3-3-5-7-5-12 0-8 6-14 14-14s14 6 14 14c0 5-2 9-5 12" />
-                <path d="M17 39h14" />
-                <path d="M19 44h10" />
-                <path d="M20 31c0-5 8-5 8 0" />
-                <path d="M18 22c2 2 5 2 7 0 2-2 5-2 7 0" />
-              </svg>
-            </span>
-            <strong>Entenda</strong>
-            <span>Compreenda padrões e comportamentos que se repetem.</span>
-          </article>
-
-          <article class="card">
-            <span class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 48 48">
-                <path d="M24 6l15 6v10c0 10-6 17-15 21C15 39 9 32 9 22V12l15-6z" />
-                <path d="M17 24l5 5 10-12" />
-              </svg>
-            </span>
-            <strong>Fortaleça</strong>
-            <span>Desenvolva limites saudáveis e autoestima.</span>
-          </article>
-
-          <article class="card">
-            <span class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 48 48">
-                <path d="M11 28h5v13h-5z" />
-                <path d="M16 29c4-5 7-10 8-18 4 1 6 4 5 8l-1 4h9c3 0 5 3 4 6l-3 8c-1 3-3 4-6 4H16" />
-                <path d="M11 41h27" />
-              </svg>
-            </span>
-            <strong>Transforme</strong>
-            <span>Elabore dores, supere desafios e viva com mais leveza.</span>
-          </article>
+        <div class="about-photo">
+          <div class="hero-photo" aria-label="Fabiane Cesconeto em consultório">
+            <img src="foto-sobremim.jpg" alt="Fabiane Cesconeto" />
+          </div>
+          <div class="quote">A escuta acolhedora e transformadora está presente em cada encontro, construindo um espaço seguro para viver suas emoções com mais clareza.</div>
         </div>
       </div>
     </section>
